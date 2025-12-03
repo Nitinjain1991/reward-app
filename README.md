@@ -1,12 +1,19 @@
+Getting Started
 
-## Getting Started
+Follow the steps below to set up the project on your local machine.
 
-## First, clone git repo, install and run the development server:
-
-```bash
+1. Clone the Repository
 git clone https://github.com/Nitinjain1991/reward-app.git
-npm i 
-npm run dev
-```
+# Clone the repository to your local machine
 
-Open [http://localhost:3000] with your browser to see the result.
+2. Install Dependencies
+npm install
+# Installs all required node_modules packages
+
+3. Run the Development Server
+npm run dev
+# Starts the development server
+
+
+After running the server, open http://localhost:3000
+ in your browser to view the application.

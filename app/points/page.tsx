@@ -20,6 +20,25 @@ const Points = () => {
     },
   ];
   const [selected, setSelected] = useState(1);
+
+  const planData = [
+    {
+      title: "Great for Beginners",
+      desc: "If a customer spends $100, they are rewarded with 500 points, which can be redeemed for a $3 discount.",
+      arrow: "before:left-1/6",
+    },
+    {
+      title: "Recommended for most businesses",
+      desc: "If a customer spends $100, they are rewarded with 500 points, which can be redeemed for a $5 discount.",
+      arrow: "before:left-1/2",
+    },
+    {
+      title: "Great for Scaling Businesses",
+      desc: "If a customer spends $100, they are rewarded with 500 points, which can be redeemed for a $10 discount.",
+      arrow: "before:left-5/6",
+    },
+  ];
+
   return (
     <MainLayout>
       <div className="space-y-5 lg:max-w-4/6 mx-auto">
@@ -71,39 +90,17 @@ const Points = () => {
               </div>
             ))}
           </div>
-          {selected === 0 && (
-            <div className="bg-gray-100 p-4 space-y-1 relative before:w-4 before:h-4 before:bg-gray-100 before:rotate-45 before:absolute before:-top-2 before:left-1/6 before:-translate-x-1/2">
-              <h3 className="font-inter font-semibold text-xs md:text-sm text-primary">
-                Great for Beginners
-              </h3>
-              <p className="font-inter font-normal text-xs md:text-sm text-primary">
-                If a customer spends $100, they are rewarded with 500 points,
-                which can be redeemed for a $3 discount.
-              </p>
-            </div>
-          )}
-          {selected === 1 && (
-            <div className="bg-gray-100 p-4 space-y-1 relative before:w-4 before:h-4 before:bg-gray-100 before:rotate-45 before:absolute before:-top-2 before:left-1/2 before:-translate-x-1/2">
-              <h3 className="font-inter font-semibold text-xs md:text-sm text-primary">
-                Recommended for most businesses
-              </h3>
-              <p className="font-inter font-normal text-xs md:text-sm text-primary">
-                If a customer spends $100, they are rewarded with 500 points,
-                which can be redeemed for a $5 discount.
-              </p>
-            </div>
-          )}
-          {selected === 2 && (
-            <div className="bg-gray-100 p-4 space-y-1 relative before:w-4 before:h-4 before:bg-gray-100 before:rotate-45 before:absolute before:-top-2 before:left-5/6 before:-translate-x-1/2">
-              <h3 className="font-inter font-semibold text-xs md:text-sm text-primary">
-                Great for Scaling Businesses
-              </h3>
-              <p className="font-inter font-normal text-xs md:text-sm text-primary">
-                If a customer spends $100, they are rewarded with 500 points,
-                which can be redeemed for a $10 discount.
-              </p>
-            </div>
-          )}
+          <div
+            className={`bg-gray-100 p-4 space-y-1 relative before:w-4 before:h-4 before:bg-gray-100 before:rotate-45 before:absolute before:-top-2 
+              ${planData[selected].arrow}`}>
+            <h3 className="font-inter font-semibold text-xs md:text-sm text-primary">
+              {planData[selected].title}
+            </h3>
+
+            <p className="font-inter font-normal text-xs md:text-sm text-primary">
+              {planData[selected].desc}
+            </p>
+          </div>
         </div>
 
         <Link href="/" className="inline-block">
