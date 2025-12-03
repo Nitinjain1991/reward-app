@@ -26,41 +26,47 @@ const page = () => {
     <MainLayout>
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-7">
-          <h1 className="font-inter font-bold text-2xl text-[#2a2a2a]">
-            Get Started with Our Gifting App
+          <h1 className="font-inter font-bold text-xl md:text-2xl text-primary">
+            Get more repeat customers
           </h1>
+          <div className="space-y-5 md:space-y-9">
+            {benefits.map((benefit, index) => {
+              const Icon = benefit.icon;
 
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
+              return (
+                <div key={index} className="flex items-center gap-3 md:gap-4">
+                  <div className="bg-gray-100 w-10 md:w-14 h-10 md:h-14 aspect-square flex items-center justify-center rounded-full">
+                    <Icon className="text-primary w-4 md:w-5" />
+                  </div>
 
-            return (
-              <div key={index} className="flex items-center space-x-4">
-                <div className="bg-gray-100 w-14 h-14 aspect-square flex items-center justify-center rounded-full">
-                  <Icon size={20} className="text-[#2a2a2a]" />
+                  <p className="font-inter font-normal text-xs md:text-sm text-primary">
+                    {benefit.description}
+                  </p>
                 </div>
-
-                <p className="font-inter font-normal text-sm text-[#2a2a2a]">
-                  {benefit.description}
-                </p>
-              </div>
-            );
-          })}
-
+              );
+            })}
+          </div>
           <Link href="/points" className="inline-block">
-            <button className="bg-[#2a2a2a] text-white p-2 px-4 inset-shadow-sm rounded-md hover:opacity-90 transition cursor-pointer">
-              <span className="font-inter font-semibold text-base capitalize">
+            <button className="bg-primary text-white p-2 px-4 inset-shadow-sm rounded-md hover:opacity-90 transition cursor-pointer">
+              <span className="font-inter font-semibold text-sm md:text-base capitalize">
                 get started
               </span>
             </button>
           </Link>
 
-          <p className="font-inter font-normal text-xs text-[#2a2a2a]">
+          <p className="font-inter font-normal text-xs text-primary">
             By proceeding, you agree to the
-            <a href="#" className="underline text-[#4739f9]">
+            <a
+              href="#"
+              className="underline text-link hover:text-link/60 duration-300 mx-1"
+            >
               Terms of Service
             </a>
             and
-            <a href="#" className="underline text-[#4739f9]">
+            <a
+              href="#"
+              className="underline text-link hover:text-link/60 duration-300 mx-1"
+            >
               Privacy Policy
             </a>
           </p>
@@ -72,7 +78,7 @@ const page = () => {
             alt="Get Started Illustration"
             width={500}
             height={500}
-            className="max-w-4/5"
+            className="w-full max-w-4/5"
           />
         </div>
       </div>
